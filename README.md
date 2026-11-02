@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
+
+A high-performance personal portfolio website built with Next.js (App Router), TypeScript, GSAP, and procedural WebGL shaders.
+
+## Overview
+
+- **Design Philosophy:** Minimalist obsidian dark aesthetic, typography with Space Grotesk & Space Mono, and responsive fluid motion.
+- **Visuals:** Custom procedural WebGL vector/flow-field canvas with mouse interaction and zero external asset dependencies.
+- **Motion:** GSAP-driven scroll and entrance choreographies with smooth transitions and reduced-motion fallbacks.
+
+## Featured Projects
+
+### 1. [Multiagent Research Assistant](https://github.com/codefixxx/Multiagent_Research_Assistant)
+* **Stack:** LangGraph, FastAPI, Redis 8, Playwright, SSE
+* **Live Demo:** [Render Dashboard](https://multiagent-research-assistant-wmli.onrender.com/dashboard)
+* Distributed multi-agent research workflow orchestrating 5 specialized agents via parallel fan-out/fan-in with Redis checkpointers and automated citation verification.
+
+### 2. [PotholeMap](https://github.com/codefixxx/Pothole_map)
+* **Stack:** PostgreSQL, PostGIS, Redis, BullMQ, Node.js, k6
+* **Live Demo:** [Vercel Deployment](https://pothole-map-one.vercel.app/)
+* Full-stack civic-tech platform connecting citizens and municipal authorities with PostGIS spatial routing, 512-dim embedding deduplication, and resilient BullMQ queues.
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (App Router, Turbopack)
+- **Language:** TypeScript
+- **Styling:** Custom CSS with fluid typography & CSS variables
+- **Motion & Interactions:** GSAP, ScrollTrigger, SplitText
+- **Graphics:** WebGL / OGL procedural shaders
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.17+ or later
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+```bash
+git clone https://github.com/codefixxx/portfolio.git
+cd portfolio
+npm install
+```
+
+### Development
+
+Run the local development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build & Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create an optimized production build:
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
