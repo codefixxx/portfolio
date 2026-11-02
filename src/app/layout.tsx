@@ -54,7 +54,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: flags }} />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <a className="skip-link" href="#main">
           Skip to content
         </a>
@@ -77,7 +77,7 @@ export default function RootLayout({
           <div className="loader__bar" data-loader-bar />
         </div>
         <Header />
-        <main id="main" tabIndex={-1}>
+        <main id="main" tabIndex={-1} suppressHydrationWarning>
           {children}
         </main>
         <Footer />

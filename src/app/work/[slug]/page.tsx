@@ -38,17 +38,17 @@ export default async function ProjectPage({ params }: PageProps) {
   return (
     <article className="case-page">
       <header className="case-hero">
-        <div className="case-hero__meta" data-reveal="fade" data-intro>
+        <div className="case-hero__meta" data-reveal="fade" data-intro suppressHydrationWarning>
           <span>SYSTEM // {String(projectIndex + 1).padStart(2, '0')} OF {String(projects.length).padStart(2, '0')}</span>
           <span>DOMAIN: {project.client.toUpperCase()}</span>
           <span>CYCLE: {project.year}</span>
         </div>
 
-        <h1 className="case-hero__title" data-split="lines" data-intro>
+        <h1 className="case-hero__title" data-split="lines" data-intro suppressHydrationWarning>
           {project.title}
         </h1>
 
-        <div className="case-tech-tags" data-reveal="fade" data-delay="0.05" data-intro>
+        <div className="case-tech-tags" data-reveal="fade" data-delay="0.05" data-intro suppressHydrationWarning>
           {project.roles.map((tag) => (
             <span key={tag} className="role-tag">
               {tag}
@@ -56,12 +56,12 @@ export default async function ProjectPage({ params }: PageProps) {
           ))}
         </div>
 
-        <p className="case-hero__summary" data-reveal="up" data-delay="0.1" data-intro>
+        <p className="case-hero__summary" data-reveal="up" data-delay="0.1" data-intro suppressHydrationWarning>
           {project.summary}
         </p>
 
         {/* Embedded Live Demo and Code Links */}
-        <div className="case-action-bar" data-reveal="up" data-delay="0.15" data-intro>
+        <div className="case-action-bar" data-reveal="up" data-delay="0.15" data-intro suppressHydrationWarning>
           {project.liveUrl && (
             <a
               href={project.liveUrl}
@@ -89,7 +89,7 @@ export default async function ProjectPage({ params }: PageProps) {
           )}
         </div>
 
-        <div className="case-metrics" data-reveal="up" data-delay="0.2" data-intro>
+        <div className="case-metrics" data-reveal="up" data-delay="0.2" data-intro suppressHydrationWarning>
           {project.metrics.map((m) => (
             <div key={m.label} className="metric-item">
               <span className="metric-label">{m.label}</span>
@@ -116,10 +116,10 @@ export default async function ProjectPage({ params }: PageProps) {
       {/* Resume Deliverables Checklist */}
       <section className="case-bullets-section" aria-label="Resume Deliverables">
         <div className="case-bullets-container">
-          <h2 className="case-section__heading" data-reveal="up">
+          <h2 className="case-section__heading" data-reveal="up" suppressHydrationWarning>
             Core Implementation &amp; Deliverables
           </h2>
-          <ul className="case-bullets-list" data-reveal="up" data-delay="0.1">
+          <ul className="case-bullets-list" data-reveal="up" data-delay="0.1" suppressHydrationWarning>
             {project.bullets.map((b, i) => (
               <li key={i} className="case-bullet-item">
                 <span className="case-bullet-marker">0{i + 1}</span>
@@ -132,7 +132,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
       <section className="case-body" aria-label="Project Engineering Architecture">
         {project.body.map((section, idx) => (
-          <div key={section.heading} className="case-section" data-reveal="up" data-delay={`${idx * 0.1}`}>
+          <div key={section.heading} className="case-section" data-reveal="up" data-delay={`${idx * 0.1}`} suppressHydrationWarning>
             <h2 className="case-section__heading">{section.heading}</h2>
             <p className="case-section__text">{section.text}</p>
           </div>

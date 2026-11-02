@@ -6,27 +6,27 @@ export default function HomePage() {
     <div className="home-page">
       {/* ================= HERO ================= */}
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__meta-top" data-reveal="fade" data-intro>
+        <div className="hero__meta-top" data-reveal="fade" data-intro suppressHydrationWarning>
           <span>ENGINEERING DOSSIER // 2026</span>
           <span>AI ENGINEER · INTELLIGENT SYSTEMS &amp; SOFTWARE</span>
           <span>{site.coordinates}</span>
         </div>
 
         <div className="hero__center">
-          <p className="hero__eyebrow" data-reveal="up" data-intro>
+          <p className="hero__eyebrow" data-reveal="up" data-intro suppressHydrationWarning>
             <span className="brand-dot" aria-hidden="true" />
             <span>AI ENGINEER · GENERATIVE AI &amp; FULL-STACK</span>
           </p>
 
-          <h1 id="hero-title" className="hero__title" data-split="lines" data-intro>
+          <h1 id="hero-title" className="hero__title" data-split="lines" data-intro suppressHydrationWarning>
             AYUSH MISHRA
           </h1>
 
-          <p className="hero__subtitle" data-reveal="up" data-delay="0.2" data-intro>
+          <p className="hero__subtitle" data-reveal="up" data-delay="0.2" data-intro suppressHydrationWarning>
             {site.description}
           </p>
 
-          <div className="hero__socials" data-reveal="up" data-delay="0.25" data-intro>
+          <div className="hero__socials" data-reveal="up" data-delay="0.25" data-intro suppressHydrationWarning>
             <a
               href="https://github.com/codefixxx"
               target="_blank"
@@ -57,7 +57,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="hero__footer" data-reveal="fade" data-delay="0.3" data-intro>
+        <div className="hero__footer" data-reveal="fade" data-delay="0.3" data-intro suppressHydrationWarning>
           <div className="hero__stat">
             <span className="hero__stat-val">APPLIED AI &amp; MULTI-AGENT</span>
             <span>Building LLM applications, autonomous agent workflows, and practical ML solutions.</span>
@@ -76,17 +76,17 @@ export default function HomePage() {
       {/* ================= SELECTED PROJECTS ================= */}
       <section id="work" className="works-section" aria-labelledby="works-heading">
         <div className="section-header">
-          <h2 id="works-heading" className="section-label" data-reveal="up">
+          <h2 id="works-heading" className="section-label" data-reveal="up" suppressHydrationWarning>
             02 // FEATURED PROJECTS
           </h2>
-          <span className="section-meta" data-reveal="up" data-delay="0.1">
+          <span className="section-meta" data-reveal="up" data-delay="0.1" suppressHydrationWarning>
             {projects.length} CORE SYSTEMS · LIVE DEMOS &amp; REPOSITORIES
           </span>
         </div>
 
         <div className="works-grid">
           {projects.map((project, idx) => (
-            <article key={project.slug} className="project-card" data-reveal="up" data-delay={`${idx * 0.1}`}>
+            <article key={project.slug} className="project-card" data-reveal="up" data-delay={`${idx * 0.1}`} suppressHydrationWarning>
               <Link
                 href={`/work/${project.slug}`}
                 className="project-card__frame-link"
@@ -178,17 +178,17 @@ export default function HomePage() {
       {/* ================= WORK EXPERIENCE ================= */}
       <section id="experience" className="experience-section" aria-labelledby="experience-heading">
         <div className="section-header">
-          <h2 id="experience-heading" className="section-label" data-reveal="up">
+          <h2 id="experience-heading" className="section-label" data-reveal="up" suppressHydrationWarning>
             03 // WORK EXPERIENCE
           </h2>
-          <span className="section-meta" data-reveal="up" data-delay="0.1">
+          <span className="section-meta" data-reveal="up" data-delay="0.1" suppressHydrationWarning>
             {experiences.length} APPOINTMENTS · PRODUCTION IMPACT
           </span>
         </div>
 
         <div className="experience-ledger">
           {experiences.map((exp, idx) => (
-            <div key={`${exp.organization}-${exp.role}`} className="experience-row" data-reveal="up" data-delay={`${idx * 0.08}`}>
+            <div key={`${exp.organization}-${exp.role}`} className="experience-row" data-reveal="up" data-delay={`${idx * 0.08}`} suppressHydrationWarning>
               <div className="exp-col exp-col--period">
                 <span className="exp-period">{exp.period}</span>
                 <span className="exp-location">{exp.location}</span>
@@ -226,18 +226,18 @@ export default function HomePage() {
       {/* ================= TECHNICAL SKILLS & EDUCATION ================= */}
       <section className="philosophy-section" aria-labelledby="skills-heading">
         <div className="philosophy__left">
-          <h2 id="skills-heading" className="section-label" data-reveal="up">
+          <h2 id="skills-heading" className="section-label" data-reveal="up" suppressHydrationWarning>
             04 // TECHNICAL SKILLS &amp; CERTS
           </h2>
         </div>
 
         <div className="philosophy__right">
-          <blockquote className="philosophy__quote" data-split="lines">
+          <blockquote className="philosophy__quote" data-split="lines" suppressHydrationWarning>
             &ldquo;Building impactful AI software means bridging advanced model capabilities with
             reliable, scalable, and resilient full-stack systems.&rdquo;
           </blockquote>
 
-          <div data-reveal="up" data-delay="0.15">
+          <div data-reveal="up" data-delay="0.15" suppressHydrationWarning>
             {site.bio.map((paragraph, i) => (
               <p key={i} className="philosophy__text">
                 {paragraph}
@@ -246,7 +246,7 @@ export default function HomePage() {
           </div>
 
           {/* Technical Skills Stack Breakdown */}
-          <div className="skills-stack-grid" data-reveal="up" data-delay="0.2">
+          <div className="skills-stack-grid" data-reveal="up" data-delay="0.2" suppressHydrationWarning>
             {site.skills.map((cat) => (
               <div key={cat.category} className="skill-category-card">
                 <h3 className="skill-category-title">{cat.category}</h3>
@@ -262,7 +262,7 @@ export default function HomePage() {
           </div>
 
           {/* Certifications & Education Bar */}
-          <div className="credentials-row" data-reveal="up" data-delay="0.25">
+          <div className="credentials-row" data-reveal="up" data-delay="0.25" suppressHydrationWarning>
             <div className="credential-card">
               <span className="credential-label">CERTIFICATIONS</span>
               <div className="credential-items">

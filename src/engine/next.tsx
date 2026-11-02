@@ -9,8 +9,20 @@ export function Engine({ setup }: { setup?: () => void }) {
   const mode = useRef<'idle' | 'push' | 'pop'>('idle');
   const first = useRef(true);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { boot(setup); }, []);
+  // Defer boot to ensure React has fully mounted and hydrated the DOM
+  useEffect(() => {
+    let animId: number;
+    const timer = setTimeout(() => {
+      animId = requestAnimationFrame(() => {
+        boot(setup);
+      });
+    }, 50);
+
+    return () => {
+      clearTimeout(timer);
+      if (animId) cancelAnimationFrame(animId);
+    };
+  }, [setup]);
 
   useEffect(() => {
     const onClick = async (e: MouseEvent) => {
@@ -41,7 +53,18 @@ export function Engine({ setup }: { setup?: () => void }) {
     if (first.current) { first.current = false; return; }
     const pop = mode.current === 'pop';
     mode.current = 'idle';
-    enter({ transition: !pop, scrollTop: !pop });
+
+    let animId: number;
+    const timer = setTimeout(() => {
+      animId = requestAnimationFrame(() => {
+        enter({ transition: !pop, scrollTop: !pop });
+      });
+    }, 50);
+
+    return () => {
+      clearTimeout(timer);
+      if (animId) cancelAnimationFrame(animId);
+    };
   }, [pathname]);
 
   return null;

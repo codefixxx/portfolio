@@ -14,10 +14,10 @@ export function Footer() {
         {/* Left Column: Heading, CTA, and Direct Details */}
         <div className="footer__prompt">
           <p className="footer__eyebrow">05 // INITIATE COLLABORATION</p>
-          <h2 className="footer__heading" data-reveal="up">
+          <h2 className="footer__heading" data-reveal="up" suppressHydrationWarning>
             Building intelligent, resilient software systems.
           </h2>
-          <div className="footer__actions" data-reveal="up" data-delay="0.1">
+          <div className="footer__actions" data-reveal="up" data-delay="0.1" suppressHydrationWarning>
             <a
               href={`mailto:${site.email}`}
               className="cta-button"
@@ -29,7 +29,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="footer__direct-info" data-reveal="up" data-delay="0.15">
+          <div className="footer__direct-info" data-reveal="up" data-delay="0.15" suppressHydrationWarning>
             <div className="footer__info-row">
               <span className="footer__info-label">EMAIL</span>
               <a href={`mailto:${site.email}`} className="footer__info-value">
@@ -51,7 +51,7 @@ export function Footer() {
 
         {/* Right Column: Structured Channels & Profiles Card */}
         <div className="footer__connect">
-          <div className="footer__connect-box" data-reveal="up" data-delay="0.1">
+          <div className="footer__connect-box" data-reveal="up" data-delay="0.1" suppressHydrationWarning>
             <h3 className="footer__box-title">CHANNELS &amp; PROFILES</h3>
             <p className="footer__box-subtitle">
               Direct access to production repositories, career trajectory, and direct inbox.

@@ -10,28 +10,28 @@ export default function AboutPage() {
   return (
     <article className="about-page">
       <header className="about-hero">
-        <p className="hero__eyebrow" data-reveal="fade" data-intro>
+        <p className="hero__eyebrow" data-reveal="fade" data-intro suppressHydrationWarning>
           ENGINEERING PROFILE · AI ENGINEER
         </p>
-        <h1 className="hero__title" data-split="lines" data-intro>
+        <h1 className="hero__title" data-split="lines" data-intro suppressHydrationWarning>
           ABOUT &amp; DOSSIER
         </h1>
       </header>
 
       <section className="about-content" aria-label="About Biography and Method">
         <div className="about-text-col">
-          <blockquote className="philosophy__quote" data-split="lines">
+          <blockquote className="philosophy__quote" data-split="lines" suppressHydrationWarning>
             &ldquo;Engineering AI systems requires connecting intelligent model capabilities with
             clean architecture, robust data pipelines, and dependable software execution.&rdquo;
           </blockquote>
 
           {site.bio.map((para, i) => (
-            <p key={i} className="philosophy__text" data-reveal="up" data-delay={`${i * 0.1}`}>
+            <p key={i} className="philosophy__text" data-reveal="up" data-delay={`${i * 0.1}`} suppressHydrationWarning>
               {para}
             </p>
           ))}
 
-          <div className="about-certifications-block" data-reveal="up" data-delay="0.2">
+          <div className="about-certifications-block" data-reveal="up" data-delay="0.2" suppressHydrationWarning>
             <h2 className="about-block__title">CERTIFICATIONS</h2>
             <div className="about-cert-grid">
               {site.certifications.map((cert) => (
@@ -44,7 +44,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="about-education-block" data-reveal="up" data-delay="0.25">
+          <div className="about-education-block" data-reveal="up" data-delay="0.25" suppressHydrationWarning>
             <h2 className="about-block__title">EDUCATION</h2>
             <div className="about-edu-card">
               <strong className="about-edu-name">{site.education.institution}</strong>
@@ -60,7 +60,7 @@ export default function AboutPage() {
         </div>
 
         <div className="about-side-col">
-          <div className="about-block" data-reveal="up">
+          <div className="about-block" data-reveal="up" suppressHydrationWarning>
             <h2 className="about-block__title">CORE SPECIALIZATIONS</h2>
             <ul className="about-block__list">
               {site.capabilities.map((c) => (
@@ -71,7 +71,7 @@ export default function AboutPage() {
             </ul>
           </div>
 
-          <div className="about-block" data-reveal="up" data-delay="0.1">
+          <div className="about-block" data-reveal="up" data-delay="0.1" suppressHydrationWarning>
             <h2 className="about-block__title">TECHNICAL SKILLS</h2>
             <div className="about-skills-breakdown">
               {site.skills.map((cat) => (
@@ -83,7 +83,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="about-block" data-reveal="up" data-delay="0.2">
+          <div className="about-block" data-reveal="up" data-delay="0.2" suppressHydrationWarning>
             <h2 className="about-block__title">COMMUNICATIONS &amp; CHANNELS</h2>
             <ul className="about-block__list">
               <li>
@@ -118,17 +118,17 @@ export default function AboutPage() {
       {/* Work Experience Ledger */}
       <section className="about-experience" aria-label="Appointments & Experience">
         <div className="section-header">
-          <h2 className="section-label" data-reveal="up">
+          <h2 className="section-label" data-reveal="up" suppressHydrationWarning>
             EXPERIENCE &amp; PRODUCTION APPOINTMENTS
           </h2>
-          <span className="section-meta" data-reveal="up" data-delay="0.1">
+          <span className="section-meta" data-reveal="up" data-delay="0.1" suppressHydrationWarning>
             {experiences.length} ROLES · PROVEN PRODUCTION DELIVERABLES
           </span>
         </div>
 
         <div className="experience-ledger">
           {experiences.map((exp, idx) => (
-            <div key={`${exp.organization}-${exp.role}`} className="experience-row" data-reveal="up" data-delay={`${idx * 0.08}`}>
+            <div key={`${exp.organization}-${exp.role}`} className="experience-row" data-reveal="up" data-delay={`${idx * 0.08}`} suppressHydrationWarning>
               <div className="exp-col exp-col--period">
                 <span className="exp-period">{exp.period}</span>
                 <span className="exp-location">{exp.location}</span>
